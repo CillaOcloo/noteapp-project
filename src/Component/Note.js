@@ -30,7 +30,7 @@ function hideModal() {
                    </Modal.Header>
                    <Modal.Body><EditNoteForm
                    note={props.note}
-                   hideModal={showModal}/>
+                   hideModal={hideModal}/>
                     </Modal.Body>
                  </Modal>
                <button className="rvm" onClick={() => { 

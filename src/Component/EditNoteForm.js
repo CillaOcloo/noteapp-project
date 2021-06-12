@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { editNote } from '../actions/notesActions';
  function EditNoteForm(props) {
      const [state, userState]= useState({
-         tite: props.note.title,
+         title: props.note.title,
          date:  props.note.date,
          note:  props.note.note,
      });
@@ -11,14 +11,17 @@ import { editNote } from '../actions/notesActions';
          userState({
              ...state,
              [event.target.name]: event.target.value,
+
+             
             
 
-         });
+         });;
      }
      function handleSubmit() {
          let note= { ...state, id:props.note.id };
          props.editNote(props.note.id,note);
          props.hideModal();
+         console.log(note)
      }
 
     return (
