@@ -20,7 +20,7 @@ function hideModal() {
             
             <div className="row">
                 <div className="col-md-2"> {props.note.title} </div>
-                <div className="col-md-2"> {props.note.date} </div>*
+                <div className="col-md-2"> {props.note.date} </div>
                 <div className="col-md-4"> {props.note.note} </div>
                 <div className="col-md-4">
                 <button className="updt" onClick={showModal}> Edit</button>
