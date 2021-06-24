@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyA44vStwXJ_eGcroHbwWV3l0R-YjsmNFHk",
     authDomain: "noteapp-fb.firebaseapp.com",
     projectId: "noteapp-fb",

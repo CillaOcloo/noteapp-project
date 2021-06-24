@@ -5,8 +5,6 @@ import notesReducer from '../reducers/notesReducer';
 import firebase from '../firebase/config'
 import thunk from 'redux-thunk';
 
-
-
 export const store =createStore (notesReducer,compose(
     applyMiddleware(thunk.withExtraArgument ({getFirebase,getFirestore})),
     reduxReactFirebase (firebase),
