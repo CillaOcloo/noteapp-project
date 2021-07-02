@@ -3,6 +3,9 @@ const initialState = {
 };
 const notesReducer = (state= initialState,action)=> {
     switch(action.type){
+        case 'ADD_ALL_NOTES':
+            let notes = action.payload;
+            return { notes: notes};
         case "ADD_NOTE":
          console.log(action.payload)
          return {...state,notes:[...state.notes,action.payload]};

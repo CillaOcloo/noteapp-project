@@ -5,6 +5,33 @@ import Note from './Component/Note';
 import { useState } from 'react';
 
  function App() {
+   const [notes, setUsers]= useState([]);
+   const [noteToUpdate, setNoteToUpdate]= useState({
+    title: '',
+    date: '',
+    note: '',
+   })
+
+   function addNote (note) {
+     setUsers([...notes, note]);
+   }
+   function deleteNote(id) {
+     let newNotes = notes.filter((note)=> note.id !== id);
+     setUsers(newNotes);
+   }
+
+   function updateNote (id, updatedNoteInfo){
+     let newNotes = notes.map((note)=>{
+       if (note.id === id) {
+         return updatedNoteInfo;
+       }
+       return note;
+     });
+     setUsers(newNotes)
+   }
+
+
+
   return (
     <div className ="container">
       <div className ="row">
