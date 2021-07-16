@@ -13,8 +13,8 @@ import Note from './Note';
 
     return (
         <div>
-            {props.notes.map((user) =>
-            (<Note note ={user}
+            {props.notes.map((user) =>(
+            <Note note ={user}
                 delete={props.delete} 
                  editNote ={props.editNote}
               
@@ -28,10 +28,11 @@ import Note from './Note';
 }
 function mapStateToProps(state) {
     return {
-        notes:state.notes
+      notes:state.noteState.notes,
     }
-}
-const mapDispatchToProps ={
+  }
+  const mapDispatchToProps ={
     getAllNotes,
-};
+  };
+
 export default connect(mapStateToProps,mapDispatchToProps) (NoteList);

@@ -1,28 +1,43 @@
 import {useState} from 'react'
-import NoteForm from '../Component/NoteForm'
-import NoteList from '../Component/NoteList'
+import { connect } from 'react-redux';
+import NoteForm from '../Component/NoteForm';
+import NoteList from '../Component/NoteList';
+import {logout} from '../actions/authActions';
 
 
- function dashboard() {
-    return (
-        <div>
-           <div className ="container">
+ function dashboard(props) {
+    function handleLogout(){
+       props.logout();
+    }
+   return (
+         <div className ="container">
               <div className ="row">
                 <div className ="col-md-6">
                 <NoteForm  />
-             </div>
-
-
-          <div className="container">
+                <button type="button" style={{backgroundColor:'red',color:'black'}} onClick={handleLogout}>Logout</button> 
+      </div>
+      
+       <div className="container">
              <div className="row">
                 <div className="col-md-6">
                 <NoteList />
               </div>
            </div>
          </div>
-       </div>
-    </div>          
- </div>
-)
+      </div>
+   </div>
+      
+   );
 }
-export default dashboard;
+const mapDispatchToProps = {logout};
+export default connect(null,mapDispatchToProps) (dashboard);
+
+
+
+
+
+
+
+
+
+
